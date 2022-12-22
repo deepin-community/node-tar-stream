@@ -1,0 +1,17 @@
+version=4
+opts=\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-tar-stream-$1/ \
+ https://github.com/mafintosh/tar-stream/tags .*/archive/.*/v?([\d\.]+).tar.gz group
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-tar-stream,ctype=nodejs,pgpmode=none" \
+ https://registry.npmjs.org/@types/tar-stream https://registry.npmjs.org/@types/tar-stream/-/tar-stream-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+opts=\
+component=fs-constants,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-fs-constants-$1/ \
+ https://github.com/mafintosh/fs-constants/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum

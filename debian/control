@@ -1,0 +1,34 @@
+Source: node-tar-stream
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Paolo Greppi <paolo.greppi@libpf.com>
+Build-Depends: debhelper-compat (= 13)
+ , node-bl <!nocheck>
+ , node-concat-stream <!nocheck>
+ , node-end-of-stream <!nocheck>
+ , node-tape <!nocheck>
+ , node-inherits <!nocheck>
+ , node-readable-stream <!nocheck>
+ , dh-sequence-nodejs
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-tar-stream
+Vcs-Git: https://salsa.debian.org/js-team/node-tar-stream.git
+Homepage: https://github.com/mafintosh/tar-stream
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
+
+Package: node-tar-stream
+Architecture: all
+Depends: ${misc:Depends}
+ , node-bl
+ , node-end-of-stream
+ , node-inherits
+ , node-readable-stream
+Provides: ${nodejs:Provides}
+Description: streaming tar parser and generator - Node.js module
+ tar-stream is a Node.js module which provides a streaming API to parse and
+ generate tar files. It is streams2 and operates purely using streams which
+ means you can extract/parse tarballs without ever hitting the file system.
+ .
+ Node.js is an event-based server-side JavaScript engine.
